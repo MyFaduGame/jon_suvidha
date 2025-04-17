@@ -15,96 +15,98 @@ class _AuthScreenBasicState extends State<AuthScreenBasic> {
   Widget build(BuildContext context) {
     return CommonScaffold(
       child: SafeArea(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: Column(
-              children: [
-                const SizedBox(height: 40),
-                Image.asset(
-                  'assets/images/splash_screen_logo.png',
-                  width: 400,
-                  height: 400,
-                ),
-                const SizedBox(height: 35),
-                const Text(
-                  "Take Care of your carrer",
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black87,
+        child: SingleChildScrollView(
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                children: [
+                  const SizedBox(height: 40),
+                  Image.asset(
+                    'assets/images/splash_screen_logo.png',
+                    width: 400,
+                    height: 400,
                   ),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  "Explore countless opportunities and build a succesful carrer with our app.",
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.black54,
+                  const SizedBox(height: 35),
+                  const Text(
+                    "Take Care of your carrer",
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.black87,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 60),
-                SizedBox(
-                  height: 60,
-                  width: 300,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => LoginScreen(),
+                  const SizedBox(height: 10),
+                  const Text(
+                    "Explore countless opportunities and build a succesful carrer with our app.",
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.black54,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 60),
+                  SizedBox(
+                    height: 60,
+                    width: 300,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LoginScreen(),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF327FB3),
+                        elevation: 3,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
                         ),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF327FB3),
-                      elevation: 3,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
                       ),
-                    ),
-                    child: Text(
-                      'LOGIN',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20),
-                SizedBox(
-                  height: 60,
-                  width: 300,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SignUpScreen(),
+                      child: Text(
+                        'LOGIN',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
                         ),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFD3EDFF),
-                      elevation: 3,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                    ),
-                    child: Text(
-                      'REGISTER',
-                      style: TextStyle(
-                        color: Color(0XFF327FB3),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
                       ),
                     ),
                   ),
-                ),
-              ],
+                  const SizedBox(height: 20),
+                  SizedBox(
+                    height: 60,
+                    width: 300,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SignUpScreen(),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFFD3EDFF),
+                        elevation: 3,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      child: Text(
+                        'REGISTER',
+                        style: TextStyle(
+                          color: Color(0XFF327FB3),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
