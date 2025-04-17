@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:job_suvidha/screen/authentication/forget_password_screen.dart';
 import 'package:job_suvidha/screen/authentication/register_screen.dart';
+import 'package:job_suvidha/screen/home/home_screen.dart';
 import 'package:job_suvidha/widgets/common_scaffold.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -129,12 +130,17 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
-                              // All inputs are valid
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text('Logging in...'),
-                                ),
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomePage()),
                               );
+                              // All inputs are valid
+                              // ScaffoldMessenger.of(context).showSnackBar(
+                              //   const SnackBar(
+                              //     content: Text('Logging in...'),
+                              //   ),
+                              // );
                             }
                           },
                           child: const Text(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:job_suvidha/screen/profile/jon_preference.dart';
 
 class WorkExperienceScreen extends StatefulWidget {
   const WorkExperienceScreen({super.key});
@@ -132,12 +133,21 @@ class _WorkExperienceScreenState extends State<WorkExperienceScreen> {
                   const SizedBox(width: 50),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => WorkExperienceScreen(),
-                        ),
-                      );
+                      if (experienceOption == "No") {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => JobPreferenceScreen()),
+                        );
+                      } else if (experienceOption == "Yes") {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => JobPreferenceScreen()),
+                        );
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text("Please select an option.")),
+                        );
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF327FB3),
