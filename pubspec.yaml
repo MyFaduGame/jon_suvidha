@@ -1,0 +1,47 @@
+name: job_suvidha
+description: "Latest Fullter Application For job portal"
+publish_to: 'none'
+
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.3.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  #Icons and Fonts and Requiered
+  cupertino_icons: ^1.0.2
+  google_fonts: ^6.1.0
+  font_awesome_flutter: ^10.7.0
+  fluttertoast: ^8.2.4
+  image_picker: ^1.1.2
+
+  #Web Based
+  shared_preferences: ^2.2.2
+  cached_network_image: ^3.3.0
+  flutter_svg: ^2.0.9
+  http: ^1.2.0
+  provider: ^6.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+  flutter_launcher_icons: ^0.13.1
+
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/images/onboarding/
+    - assets/images/icons/
+ 
+  # fonts:
+  #   - family: GameOver
+  #     fonts:
+  #       - asset: assets/fonts/game_over.ttf
