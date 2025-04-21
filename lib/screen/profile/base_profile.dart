@@ -40,13 +40,23 @@ class _BaseProfileState extends State<BaseProfile> {
             children: [
               // Back and Title
               Row(
-                children: const [
-                  Icon(Icons.arrow_back),
-                  SizedBox(width: 10),
-                  Text(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                      weight: 5,
+                      size: 25,
+                    ),
+                  ),
+                  const Text(
                     "Profile",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  )
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(width: 12),
                 ],
               ),
               const SizedBox(height: 20),
@@ -54,24 +64,31 @@ class _BaseProfileState extends State<BaseProfile> {
               // Card Header
               Container(
                 width: double.infinity,
+                height: 100,
                 padding:
                     const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFEAF1FF),
-                  borderRadius: BorderRadius.circular(12),
-                ),
+                    color: const Color(0xFFF4F5F9),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(
+                      color: Colors.grey,
+                    )),
                 child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text(
                       "Let ‘s build your resume !",
                       style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold),
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
                     ),
                     SizedBox(height: 6),
                     Text(
                       "Enter Your Details so that employers can find you easily for a job.",
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 13),
+                      style: TextStyle(fontSize: 12),
                     ),
                   ],
                 ),
@@ -95,8 +112,11 @@ class _BaseProfileState extends State<BaseProfile> {
                     ),
                     TextButton.icon(
                       onPressed: pickImage,
-                      icon: const Icon(Icons.camera_alt),
-                      label: const Text("Add Photo"),
+                      icon: const Icon(Icons.camera_alt, color: Colors.blue),
+                      label: const Text(
+                        "Add Photo",
+                        style: TextStyle(color: Colors.blue),
+                      ),
                     ),
                   ],
                 ),
@@ -149,7 +169,7 @@ class _BaseProfileState extends State<BaseProfile> {
                 child: Text(
                   "Build your profile and see jobs in 3 minutes",
                   style: TextStyle(
-                      color: Colors.blue, fontWeight: FontWeight.w500),
+                      color: Color(0xFF327FB3), fontWeight: FontWeight.w500),
                 ),
               ),
               const SizedBox(height: 25),

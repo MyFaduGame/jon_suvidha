@@ -11,9 +11,9 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: "Job Suvidha",
-        home: SplashScreen()
-        );
+      debugShowCheckedModeBanner: false,
+      title: "Job Suvidha",
+      home: SplashScreen(),
+    );
   }
 }

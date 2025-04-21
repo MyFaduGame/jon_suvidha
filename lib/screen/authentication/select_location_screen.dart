@@ -32,13 +32,23 @@ class _LocationCityScreenState extends State<LocationCityScreen> {
             children: [
               // Back button & title
               Row(
-                children: const [
-                  Icon(Icons.arrow_back),
-                  SizedBox(width: 12),
-                  Text(
-                    "Location",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                      weight: 5,
+                      size: 25,
+                    ),
                   ),
+                  const Text(
+                    "Location",
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(width: 12),
                 ],
               ),
               const SizedBox(height: 20),

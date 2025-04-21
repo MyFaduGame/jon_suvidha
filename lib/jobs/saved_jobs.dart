@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:job_suvidha/screen/authentication/select_location_screen.dart';
+import 'package:job_suvidha/screen/home/home_screen.dart';
 import 'package:job_suvidha/widgets/common_scaffold.dart';
 
-class LocationInitlaScreen extends StatefulWidget {
-  const LocationInitlaScreen({super.key});
+class SavedJobs extends StatefulWidget {
+  const SavedJobs({super.key});
 
   @override
-  State<LocationInitlaScreen> createState() => _LocationInitlaScreenState();
+  State<SavedJobs> createState() => _SavedJobsState();
 }
 
-class _LocationInitlaScreenState extends State<LocationInitlaScreen> {
+class _SavedJobsState extends State<SavedJobs> {
   @override
   Widget build(BuildContext context) {
     return CommonScaffold(
@@ -20,6 +20,7 @@ class _LocationInitlaScreenState extends State<LocationInitlaScreen> {
                 const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -35,7 +36,7 @@ class _LocationInitlaScreenState extends State<LocationInitlaScreen> {
                       ),
                     ),
                     const Text(
-                      "Location",
+                      "Showing",
                       style:
                           TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                     ),
@@ -43,25 +44,41 @@ class _LocationInitlaScreenState extends State<LocationInitlaScreen> {
                   ],
                 ),
                 const SizedBox(height: 40),
-
-                // Illustration
-                Image.asset(
-                  'assets/images/location_illustration.png', // Replace with your image asset path
-                  height: 200,
+                Text(
+                  'Saved Jobs',
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
                 const SizedBox(height: 40),
-
-                // Prompt
-                const Text(
-                  "Which City do you want to work in ?",
-                  style: TextStyle(fontSize: 16, color: Colors.black87),
-                  textAlign: TextAlign.center,
+                Image.asset(
+                  'assets/images/saved_job.png',
+                  height: 200,
+                  width: double.infinity,
                 ),
-                const SizedBox(height: 6),
-                const Text(
-                  "आप किस शहर में काम करना चाहते हैं?",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-                  textAlign: TextAlign.center,
+                const SizedBox(height: 40),
+                Column(
+                  children: [
+                    const Text(
+                      "Find your saved job here",
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 6),
+                    const Text(
+                      "Save here all the jobs you like and apply on them or contact HRs faster",
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 100),
 
@@ -71,7 +88,7 @@ class _LocationInitlaScreenState extends State<LocationInitlaScreen> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => LocationCityScreen(),
+                        builder: (context) => HomePage(),
                       ),
                     );
                   },
@@ -83,7 +100,7 @@ class _LocationInitlaScreenState extends State<LocationInitlaScreen> {
                     ),
                   ),
                   child: const Text(
-                    "YOUR LOCATION",
+                    "SEE JOBS",
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,

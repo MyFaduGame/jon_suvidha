@@ -226,7 +226,7 @@ class _EducationDetailsScreenState extends State<EducationDetailsScreen> {
     required void Function(T?) onChanged,
   }) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 16),
+      padding: const EdgeInsets.all(16),
       child: InputDecorator(
         decoration: InputDecoration(
           labelText: label,
@@ -255,7 +255,7 @@ class _EducationDetailsScreenState extends State<EducationDetailsScreen> {
   Widget buildTextField(String label, TextEditingController controller,
       {String? hint, TextInputType keyboardType = TextInputType.text}) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 16),
+      padding: const EdgeInsets.all(16),
       child: TextField(
         controller: controller,
         keyboardType: keyboardType,

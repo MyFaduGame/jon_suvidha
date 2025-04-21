@@ -200,36 +200,42 @@ class _WorkExperienceScreenState extends State<WorkExperienceScreen> {
     required List<T> items,
     required void Function(T?) onChanged,
   }) {
-    return InputDecorator(
-      decoration: InputDecoration(
-        labelText: label,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-      ),
-      child: DropdownButtonHideUnderline(
-        child: DropdownButton<T>(
-          value: value,
-          isExpanded: true,
-          hint: Text("Select $label"),
-          items: items
-              .map((item) => DropdownMenuItem<T>(
-                    value: item,
-                    child: Text(item.toString()),
-                  ))
-              .toList(),
-          onChanged: onChanged,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: InputDecorator(
+        decoration: InputDecoration(
+          labelText: label,
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+        ),
+        child: DropdownButtonHideUnderline(
+          child: DropdownButton<T>(
+            value: value,
+            isExpanded: true,
+            hint: Text("Select $label"),
+            items: items
+                .map((item) => DropdownMenuItem<T>(
+                      value: item,
+                      child: Text(item.toString()),
+                    ))
+                .toList(),
+            onChanged: onChanged,
+          ),
         ),
       ),
     );
   }
 
   Widget buildTextField(String label, TextEditingController controller) {
-    return TextField(
-      controller: controller,
-      decoration: InputDecoration(
-        labelText: label,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: TextField(
+        controller: controller,
+        decoration: InputDecoration(
+          labelText: label,
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+        ),
       ),
     );
   }

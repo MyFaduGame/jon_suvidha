@@ -71,12 +71,12 @@ class _JobPreferenceScreenState extends State<JobPreferenceScreen> {
                   children: const [
                     StepIcon(label: "Education", stepNumber: "1"),
                     StepIcon(label: "Experience", stepNumber: "2"),
-                    StepIcon(label: "Preference", stepNumber: "3"),
                     StepIcon(
-                      label: "See Jobs",
-                      icon: Icons.person,
+                      label: "Preference",
+                      stepNumber: "3",
                       isActive: true,
                     ),
+                    StepIcon(label: "See Jobs", icon: Icons.person),
                   ],
                 ),
               ],
@@ -100,16 +100,14 @@ class _JobPreferenceScreenState extends State<JobPreferenceScreen> {
                       .where((job) => job["title"]!
                           .toLowerCase()
                           .contains(searchQuery.toLowerCase()))
-                      .map(buildJobOption)
-                      .toList(),
+                      .map(buildJobOption),
                   const SizedBox(height: 20),
                   buildSection("All Departments"),
                   ...allDepartments
                       .where((job) => job["title"]!
                           .toLowerCase()
                           .contains(searchQuery.toLowerCase()))
-                      .map(buildJobOption)
-                      .toList(),
+                      .map(buildJobOption),
                   const SizedBox(height: 20),
                 ],
               ),
