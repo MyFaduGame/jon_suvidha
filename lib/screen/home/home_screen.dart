@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:job_suvidha/jobs/saved_jobs.dart';
+import 'package:job_suvidha/screen/basic/notification_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -126,14 +127,24 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           const SizedBox(width: 10),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.blue.shade50,
-                              borderRadius: BorderRadius.circular(10),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => NotificationScreen(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.blue.shade50,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              padding: const EdgeInsets.all(8),
+                              child: Icon(Icons.notifications_none,
+                                  color: Colors.blue),
                             ),
-                            padding: const EdgeInsets.all(8),
-                            child: Icon(Icons.notifications_none,
-                                color: Colors.blue),
                           ),
                         ],
                       )
