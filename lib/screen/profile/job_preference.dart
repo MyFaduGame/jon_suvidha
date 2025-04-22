@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:job_suvidha/screen/home/home_screen.dart';
+import 'package:job_suvidha/screen/jobs/show_jobs.dart';
 
 class JobPreferenceScreen extends StatefulWidget {
   const JobPreferenceScreen({super.key});
@@ -144,7 +144,7 @@ class _JobPreferenceScreenState extends State<JobPreferenceScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomePage(),
+                        builder: (context) => JobInfoScreen(),
                       ),
                     );
                   },

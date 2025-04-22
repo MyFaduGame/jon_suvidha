@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:job_suvidha/jobs/saved_jobs.dart';
+import 'package:job_suvidha/screen/jobs/job_details.dart';
+import 'package:job_suvidha/screen/jobs/saved_jobs.dart';
 import 'package:job_suvidha/screen/basic/notification_screen.dart';
+import 'package:job_suvidha/screen/jobs/view_all_jobs.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -446,14 +448,24 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                     Spacer(),
-                    Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.blue),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        padding: EdgeInsets.all(5),
-                        child: Text("View All",
-                            style: TextStyle(color: Colors.blue))),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ViewAllJobs(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.blue),
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          padding: EdgeInsets.all(5),
+                          child: Text("View All",
+                              style: TextStyle(color: Colors.blue))),
+                    ),
                   ],
                 ),
               ),
@@ -463,7 +475,14 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 20),
             Center(
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ViewAllJobs(),
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.blue,
@@ -518,9 +537,19 @@ class _HomePageState extends State<HomePage> {
               ),
               const SizedBox(width: 10),
               const SizedBox(width: 10),
-              Icon(
-                Icons.arrow_forward_ios,
-                color: Colors.blue,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => JobDetailsScreen(),
+                    ),
+                  );
+                },
+                child: Icon(
+                  Icons.arrow_forward_ios,
+                  color: Colors.blue,
+                ),
               )
             ],
           ),
@@ -542,11 +571,20 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           const SizedBox(height: 8),
+          Container(
+            color: Colors.grey.shade200,
+            width: double.infinity,
+            height: 4,
+          ),
+          const SizedBox(height: 8),
           Row(
             children: [
-              Text(
-                job['experience'],
-                style: TextStyle(color: Colors.orangeAccent),
+              Chip(
+                label: Text(
+                  job['experience'],
+                  style: TextStyle(color: Colors.orangeAccent),
+                ),
+                backgroundColor: Colors.amber.shade100,
               ),
               const SizedBox(width: 10),
               Chip(

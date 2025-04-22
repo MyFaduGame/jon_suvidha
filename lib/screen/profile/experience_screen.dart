@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:job_suvidha/screen/profile/jon_preference.dart';
+import 'package:job_suvidha/screen/profile/job_preference.dart';
 
 class WorkExperienceScreen extends StatefulWidget {
   const WorkExperienceScreen({super.key});
